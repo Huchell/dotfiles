@@ -8,6 +8,7 @@
 		"clock"
 	],
 	"modules-right": [
+		"battery",
 		"pulseaudio",
 		"memory",
 		"cpu",
@@ -41,7 +42,8 @@
 		"interval": 5,
 		"max-length": 50, 
 		"format-ethernet": "  {ifname} ",
-		"tooltip-format": "{bandwidthDownBits} | {bandwidthUpBits}"
+		"tooltip-format": "{bandwidthDownBits} | {bandwidthUpBits}",
+		"on-click": ""
 	},
 	"memory": {
 		"format": "  {percentage}%"
@@ -79,5 +81,13 @@
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
 		"escape": true
+	},
+	"battery": {
+		"format": "{icon} {capacity}%",
+		"states": {
+			"standard": 30,
+			"critical": 15
+		},
+		"format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
 	}
 }

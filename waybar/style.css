@@ -5,6 +5,7 @@
 @import "styles/cpu.css";
 @import "styles/network.css";
 @import "styles/notifications.css";
+@import "styles/battery.css";
 
 * {
 	font-size: 15px;
