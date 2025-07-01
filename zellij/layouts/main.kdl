@@ -1,0 +1,22 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="status-bar" {
+                format_left     "{mode} #[fg=#d3c6aa,bold]{session}"
+                format_right    "{datetime}"
+
+                mode_normal "#[bg=#a7c080,fg=#1e2326,bold] Normal "
+                mode_pane   "#[bg=#a7c080,fg=#1e2326,bold] Pane "
+                mode_scroll "#[bg=#a7c080,fg=#1e2326,bold] Scroll "
+                mode_resize "#[bg=#a7c080,fg=#1e2326,bold] Resize "
+                mode_locked "#[bg=#e67e80,fg=#1e2326,bold] Locked "
+                mode_tmux   "#[bg=#ffc387] "
+
+                datetime            "#[bg=#a7c080,fg=#1e2326,bold] {format} "
+                datetime_format     "%d/%m/%Y %H:%M"
+                datetime_timezone   "Europe/London"
+            }
+        }
+    }
+}
