@@ -1,0 +1,30 @@
+button:hover {
+	background: inherit;
+	box-shadow: unset;
+	outline: unset;
+}
+
+#workspaces button {
+	background-color: #272E33;
+
+	color: rgb(205, 205, 205);
+	border-radius: 0px;
+}
+
+#workspaces button:first-child {
+	border-radius: 5px 0 0 5px;
+}
+#workspaces button:last-child {
+	border-radius: 0 5px 5px 0;
+}
+#workspaces button:only-child {
+	border-radius: 5px;
+}
+
+#workspaces button:hover {
+	background-color: #4F5B58;
+}
+
+#workspaces button.active {
+	box-shadow: inset 0 -3px #E67E80;
+}

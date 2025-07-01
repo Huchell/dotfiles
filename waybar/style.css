@@ -1,0 +1,16 @@
+@import "styles/clock.css";
+@import "styles/workspaces.css";
+@import "styles/pulseaudio.css";
+@import "styles/memory.css";
+@import "styles/cpu.css";
+@import "styles/network.css";
+@import "styles/notifications.css";
+
+* {
+	font-size: 15px;
+}
+
+window#waybar {
+	background: transparent;
+	color: rgb(205, 205, 205);
+}

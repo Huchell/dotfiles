@@ -1,0 +1,83 @@
+{
+	"position": "top",
+	"margin": 4,
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"pulseaudio",
+		"memory",
+		"cpu",
+		"network",
+		"custom/notifications",
+	],
+	"clock": {
+		"format": "{:%H:%M | %D}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-scroll": 1,
+			"on-click-right": "mode",
+			"format": {
+				"months": "<span color='#d3c6aa'><b>{}</b></span>",
+				"days": "<span color='#d3c6aa'><b>{}</b></span>",
+				"weekdays": "<span color='#dbbc7f'><b>{}</b></span>",
+				"today": "<span color='#E69875'><b>{}</b></span>",
+			}
+		},
+		"actions": {
+			"on-click-right": "mode"
+		}
+	},
+	"disk": {
+		"format": "{free}",
+		"tooltip-format": "{used} / {total} used ({percentage_used}%)"
+	},
+	"network": {
+		"interval": 5,
+		"max-length": 50, 
+		"format-ethernet": "  {ifname} ",
+		"tooltip-format": "{bandwidthDownBits} | {bandwidthUpBits}"
+	},
+	"memory": {
+		"format": "  {percentage}%"
+	},
+	"cpu": {
+		"format": "󰍛  {usage}%"
+	},
+	"pulseaudio": {
+		"format": "{icon}  {volume}%",
+		"format-muted": "",
+		"format-icons": {
+			"default": ["", ""]
+		},
+		"on-click": "pavucontrol",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+"
+	},
+	"custom/notifications": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "󰵙",
+			"none": "󰂚",
+			"dnd-notification": "󰂛",
+			"dnd-none": "󰂛",
+			"inhibited-notification": "󱅫",
+			"inhibited-none": "󱅫",
+			"dnd-inhibited-notification": "󰂛",
+			"dnd-inhibited-none": "󰂛"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	}
+}
