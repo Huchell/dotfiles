@@ -1,0 +1,62 @@
+[user]
+	name = Huchell
+	email = sean.p.murray97@gmail.com
+; [url "git@github.com:supersolid"]
+; 	insteadof = https://github.com/supersolid
+
+[alias]
+	st = status -s
+	graph = log --oneline --graph
+
+[color]
+	status = always
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefixs = true
+	renames = true
+[push]
+	default = simple
+	autoSetupRemove = true
+	followTags = true
+	autoSetupRemote = true
+[fetch]
+	prune = true
+	pruneTags = true
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[merge]
+	conflictstyle = zdiff3
+[pull]
+	rebase = true
+
+[core]
+	editor = nvim
+[includeIf "gitdir:~/projects/supersolid/"]
+	path = .gitconfig-supersolid
+[maintenance]
+	repo = /home/sean/projects/supersolid/gemini
+	repo = /home/sean/projects/supersolid/gemini-server
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
