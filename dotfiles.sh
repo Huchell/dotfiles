@@ -1,12 +1,13 @@
 #!/usr/bin/bash
 
 function help() {
-	echo """
-Script to help manage and sync config folders with this repo:
-  - apply [...folder]  | applies latest versions from the repository to local config
-  - save [...folder]   | saves local config folders to repository
-  - list               | lists all saved configs
-  - help               | prints this message
+	echo """Script to help manage and sync config folders with this repository:
+  apply [...folder]  | applies latest versions from the repository to local config
+  save [...folder]   | saves local config folders to repository
+  list [type]        |
+    repo (default)   | lists all saved configs
+    system           | lists all folders in config
+  help               | prints this message
 """
 }
 
