@@ -14,8 +14,13 @@ function help() {
 function apply() {
 	local config=$1
 	for folder in ${@:2}; do
-		echo "applying: '$folder' to '$config/$folder'"
-		cp -r "$folder/." -t "$config/$folder"
+		local copy_folder="$config/$folder"
+		if [ ! -d "$copy_folder" ]; then
+			mkdir "$copy_folder"
+		fi
+
+		echo "applying: '$folder' to '$copy_folder'"
+		cp -r "$folder/." -t "$copy_folder"
 	done
 }
 
@@ -26,6 +31,10 @@ function save() {
 		if [ -d "$copy_folder/.git" ]; then
 			echo "$copy_folder is a git repositoy, setting up submodule"
 			continue
+		fi
+
+		if [ -d "$folder" ]; then
+			mkdir "$folder"
 		fi
 
 		echo "saving: '$copy_folder' to '$folder'"
